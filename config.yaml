@@ -179,8 +179,9 @@ actions:
 
 # Definition of custom endpoints
 endpoints:
-  # Sem este bloco o endpoint openAI não tem titleModel, e o título passa a ser
-  # gerado pelo próprio modelo da conversa — hoje o gpt-5.1, para escrever 5 palavras.
+  # Este bloco precisa existir. O AppService só monta configuração de endpoint para
+  # as chaves presentes aqui; sem ele o openAI fica sem titleModel, e o título passa
+  # a ser gerado pelo modelo da própria conversa — caro demais para cinco palavras.
   openAI:
     titleConvo: true
     titleModel: 'gpt-4o-mini'
