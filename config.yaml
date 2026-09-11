@@ -232,7 +232,14 @@ endpoints:
       apiKey: '${DEEPSEEK_API_KEY}'
       baseURL: 'https://api.deepseek.com/v1'
       models:
-        default: ['deepseek-v4-pro', 'deepseek-v4-flash']
+        # Esta lista é o FALLBACK, não decoração: loadConfigModels.js:105 usa
+        # `!modelData?.length ? endpoint.models.default : modelData`, e fetchModels
+        # tem timeout de 5s e devolve [] em qualquer erro. Se a DeepSeek demorar,
+        # é esta lista que passa a validar as requisições — então ela precisa
+        # conter o que o MODEL_CATEGORIES envia (`deepseek-flash`), senão o
+        # endpoint inteiro cai com illegal_model_request.
+        # `deepseek-v4-flash` foi aposentado pela DeepSeek e saiu do /v1/models.
+        default: ['deepseek-v4-pro', 'deepseek-flash']
         fetch: true
       titleConvo: true
       titleModel: 'deepseek-chat'
