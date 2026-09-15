@@ -1,86 +1,126 @@
-# For more information, see the Configuration Guide:
-# https://www.chat.superagentes.ai/docs/configuration/librechat_yaml
-
-# Configuration version (required)
 version: 1.2.8
-
-# Cache settings: Set to true to enable caching
 cache: true
-
-# File strategy s3/firebase
-fileStrategy: 's3'
-
-# Custom interface configuration
+fileStrategy: s3
 interface:
-  customWelcome: 'Bem vindo ao Chat Lendário! Divirta-se!'
-  # MCP Servers UI configuration
+  customWelcome: Bem vindo ao Chat Lendário! Divirta-se!
   mcpServers:
-    placeholder: 'MCP Servers'
-  # Enable/disable file search as a chatarea selection (default: true)
-  # Note: This setting does not disable the Agents File Search Capability.
-  # To disable the Agents Capability, see the Agents Endpoint configuration instead.
+    placeholder: MCP Servers
   fileSearch: true
-  # Privacy policy settings
   privacyPolicy:
-    externalUrl: 'https://chat.superagentes.ai/privacy-policy'
+    externalUrl: https://chat.superagentes.ai/privacy-policy
     openNewTab: true
-
-  # Terms of service
   termsOfService:
-    externalUrl: 'https://chat.superagentes.ai/tos'
+    externalUrl: https://chat.superagentes.ai/tos
     openNewTab: true
     modalAcceptance: true
-    modalTitle: 'Termos de Uso e Política de Privacidade - Chat Lendário'
-    modalContent: |
+    modalTitle: Termos de Uso e Política de Privacidade - Chat Lendário
+    modalContent: >
       # Termos de Uso e Política de Privacidade
+
       *Data de Vigência: Agosto de 2025*
 
-      Bem-vindo à Chat Lendário, plataforma para criação uso de modelos selecionados e criação de agentes, disponível em https://chat.superagentes.ai. Estes Termos de Uso e Política de Privacidade ("Termos") regem o uso de nossos serviços. Ao acessar ou utilizar a Plataforma, você concorda em estar vinculado a estes Termos.
+
+      Bem-vindo à Chat Lendário, plataforma para criação uso de modelos selecionados e criação de agentes, disponível em
+      https://chat.superagentes.ai. Estes Termos de Uso e Política de Privacidade ("Termos") regem o uso de nossos
+      serviços. Ao acessar ou utilizar a Plataforma, você concorda em estar vinculado a estes Termos.
+
 
       ## 1. Sobre a Empresa
-      A plataforma é operada pela Academia de Lendários LTDA, inscrita no CNPJ 37.348.342/0001-07, comprometida com a proteção de dados conforme a Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018).
+
+      A plataforma é operada pela Academia de Lendários LTDA, inscrita no CNPJ 37.348.342/0001-07, comprometida com a
+      proteção de dados conforme a Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018).
+
 
       ## 2. Uso da Plataforma
-      A Chat Lendário é projetada para transformar atendimento, vendas e suporte com agentes de IA personalizados. Qualquer uso indevido ou ilícito da Plataforma é expressamente proibido. Os usuários devem utilizar os serviços de forma ética e em conformidade com a legislação aplicável.
+
+      A Chat Lendário é projetada para transformar atendimento, vendas e suporte com agentes de IA personalizados.
+      Qualquer uso indevido ou ilícito da Plataforma é expressamente proibido. Os usuários devem utilizar os serviços de
+      forma ética e em conformidade com a legislação aplicável.
+
 
       ## 3. Propriedade Intelectual
-      Todo conteúdo da Plataforma, incluindo textos, gráficos, logos, ícones e documentos, são de propriedade exclusiva da Chat Lendário ou de seus licenciantes, protegidos pelas leis de direitos autorais e propriedade intelectual.
+
+      Todo conteúdo da Plataforma, incluindo textos, gráficos, logos, ícones e documentos, são de propriedade exclusiva
+      da Chat Lendário ou de seus licenciantes, protegidos pelas leis de direitos autorais e propriedade intelectual.
+
 
       ## 4. Política de Reembolso
-      Em conformidade com o Código de Defesa do Consumidor, você tem direito ao reembolso integral no prazo de 7 dias corridos da compra, sem necessidade de justificativa. O reembolso será processado em até 10 dias úteis pelo mesmo método de pagamento original.
+
+      Em conformidade com o Código de Defesa do Consumidor, você tem direito ao reembolso integral no prazo de 7 dias
+      corridos da compra, sem necessidade de justificativa. O reembolso será processado em até 10 dias úteis pelo mesmo
+      método de pagamento original.
+
 
       ## 5. Coleta e Uso de Dados
-      Coletamos dados essenciais para prestação dos serviços: dados cadastrais (nome, e-mail, telefone), dados de uso (interações com agentes), dados financeiros (pagamentos), dados de usuários finais (interações via WhatsApp e outros canais), dados de autenticação (tokens de acesso) e dados de treinamento (para personalização de LLMs).
+
+      Coletamos dados essenciais para prestação dos serviços: dados cadastrais (nome, e-mail, telefone), dados de uso
+      (interações com agentes), dados financeiros (pagamentos), dados de usuários finais (interações via WhatsApp e
+      outros canais), dados de autenticação (tokens de acesso) e dados de treinamento (para personalização de LLMs).
+
 
       ## 6. Finalidade do Tratamento
-      Os dados são utilizados para: operação do serviço, melhoria dos serviços, comunicação com cliente, cumprimento de obrigações legais, análise e relatórios, e treinamento de modelos de linguagem (LLMs) para personalização.
+
+      Os dados são utilizados para: operação do serviço, melhoria dos serviços, comunicação com cliente, cumprimento de
+      obrigações legais, análise e relatórios, e treinamento de modelos de linguagem (LLMs) para personalização.
+
 
       ## 7. Direitos dos Usuários
-      Conforme a LGPD, você tem direito a: confirmação de tratamento de dados, acesso aos dados, correção de dados incorretos, anonimização/bloqueio/eliminação de dados desnecessários, portabilidade dos dados, revogação do consentimento e informações sobre uso em treinamento de LLMs. Para exercer estes direitos, contate: contato@superagentes.ai.
+
+      Conforme a LGPD, você tem direito a: confirmação de tratamento de dados, acesso aos dados, correção de dados
+      incorretos, anonimização/bloqueio/eliminação de dados desnecessários, portabilidade dos dados, revogação do
+      consentimento e informações sobre uso em treinamento de LLMs. Para exercer estes direitos, contate:
+      contato@superagentes.ai.
+
 
       ## 8. Compartilhamento de Dados
-      Dados podem ser compartilhados com: prestadores de serviços terceirizados, autoridades regulatórias (quando exigido por lei), clientes do serviço (relatórios de desempenho), integrações autorizadas (WhatsApp, etc.) e provedores de LLMs (GPT-4o Turbo, Claude 3 Opus, etc.). Dados do Google Workspace são processados exclusivamente para personalização individual, nunca para treinamento de modelos generalizados.
+
+      Dados podem ser compartilhados com: prestadores de serviços terceirizados, autoridades regulatórias (quando
+      exigido por lei), clientes do serviço (relatórios de desempenho), integrações autorizadas (WhatsApp, etc.) e
+      provedores de LLMs (GPT-4o Turbo, Claude 3 Opus, etc.). Dados do Google Workspace são processados exclusivamente
+      para personalização individual, nunca para treinamento de modelos generalizados.
+
 
       ## 9. Segurança dos Dados
-      Implementamos medidas avançadas de segurança: criptografia de dados sensíveis, controle de acesso limitado, monitoramento contínuo, tokens seguros para autenticação, armazenamento seguro de chaves de API e anonimização de dados no treinamento de LLMs sempre que possível.
+
+      Implementamos medidas avançadas de segurança: criptografia de dados sensíveis, controle de acesso limitado,
+      monitoramento contínuo, tokens seguros para autenticação, armazenamento seguro de chaves de API e anonimização de
+      dados no treinamento de LLMs sempre que possível.
+
 
       ## 10. Retenção de Dados
-      Mantemos dados pelo tempo necessário conforme o plano contratado: conversas e interações (conforme plano escolhido), dados de conta (enquanto ativa), logs e auditoria (até 90 dias), dados de treinamento de LLMs (período necessário para treinamento com anonimização quando possível).
+
+      Mantemos dados pelo tempo necessário conforme o plano contratado: conversas e interações (conforme plano
+      escolhido), dados de conta (enquanto ativa), logs e auditoria (até 90 dias), dados de treinamento de LLMs (período
+      necessário para treinamento com anonimização quando possível).
+
 
       ## 11. Transferências Internacionais
-      Dados podem ser transferidos para o exterior para cumprimento dos serviços (ex: servidores em nuvem), sempre observando o mesmo nível de proteção da LGPD e estabelecendo contratos que respeitem esta Política de Privacidade.
+
+      Dados podem ser transferidos para o exterior para cumprimento dos serviços (ex: servidores em nuvem), sempre
+      observando o mesmo nível de proteção da LGPD e estabelecendo contratos que respeitem esta Política de Privacidade.
+
 
       ## 12. Lei Aplicável
-      Estes Termos são regidos pela Lei nº 13.853 e pelo Código Civil Brasileiro. Disputas serão resolvidas no foro da sede da Academia de Lendários LTDA.
+
+      Estes Termos são regidos pela Lei nº 13.853 e pelo Código Civil Brasileiro. Disputas serão resolvidas no foro da
+      sede da Academia de Lendários LTDA.
+
 
       ## 13. Alterações nos Termos
-      Reservamos o direito de alterar estes Termos a qualquer momento. Usuários serão notificados sobre alterações significativas via plataforma ou e-mail. O uso contínuo após as alterações indica consentimento com os termos atualizados.
+
+      Reservamos o direito de alterar estes Termos a qualquer momento. Usuários serão notificados sobre alterações
+      significativas via plataforma ou e-mail. O uso contínuo após as alterações indica consentimento com os termos
+      atualizados.
+
 
       ## 14. Informações de Contato
-      Para dúvidas sobre estes Termos, tratamento de dados ou uso de LLMs, entre em contato: contato@superagentes.ai ou suporte@superagentes.ai.
 
-      Ao utilizar a Plataforma, você reconhece ter lido estes Termos de Uso e Política de Privacidade e concorda em estar vinculado a eles.
+      Para dúvidas sobre estes Termos, tratamento de dados ou uso de LLMs, entre em contato: contato@superagentes.ai ou
+      suporte@superagentes.ai.
 
+
+      Ao utilizar a Plataforma, você reconhece ter lido estes Termos de Uso e Política de Privacidade e concorda em
+      estar vinculado a eles.
   endpointsMenu: true
   modelSelect: true
   parameters: true
@@ -90,362 +130,189 @@ interface:
   bookmarks: true
   multiConvo: true
   agents: true
-  # Temporary chat retention period in hours (default: 720, min: 1, max: 8760)
-  # temporaryChatRetention: 1
-
-# Example Cloudflare turnstile (optional)
-#turnstile:
-#  siteKey: "your-site-key-here"
-#  options:
-#    language: "auto"    # "auto" or an ISO 639-1 language code (e.g. en)
-#    size: "normal"      # Options: "normal", "compact", "flexible", or "invisible"
-
-# Example Registration Object Structure (optional)
 registration:
-  socialLogins: ['github', 'google', 'discord', 'openid', 'facebook', 'apple', 'saml']
-  # allowedDomains:
-  # - "gmail.com"
-
-# Example Balance settings
-# balance:
-#   enabled: false
-#   startBalance: 20000
-#   autoRefillEnabled: false
-#   refillIntervalValue: 30
-#   refillIntervalUnit: 'days'
-#   refillAmount: 10000
-
-# speech:
-#   tts:
-#     openai:
-#       url: ''
-#       apiKey: '${TTS_API_KEY}'
-#       model: ''
-#       voices: ['']
-
-#
-#   stt:
-#     openai:
-#       url: ''
-#       apiKey: '${STT_API_KEY}'
-#       model: ''
-
-# rateLimits:
-#   fileUploads:
-#     ipMax: 100
-#     ipWindowInMinutes: 60  # Rate limit window for file uploads per IP
-#     userMax: 50
-#     userWindowInMinutes: 60  # Rate limit window for file uploads per user
-#   conversationsImport:
-#     ipMax: 100
-#     ipWindowInMinutes: 60  # Rate limit window for conversation imports per IP
-#     userMax: 50
-#     userWindowInMinutes: 60  # Rate limit window for conversation imports per user
-
-# Example Actions Object Structure
+  socialLogins:
+    - github
+    - google
+    - discord
+    - openid
+    - facebook
+    - apple
+    - saml
 actions:
   allowedDomains:
-    - 'swapi.dev'
-    - 'chat.superagentes.ai'
-    - 'google.com'
-
-# Example MCP Servers Object Structure
-# mcpServers:
-#   everything:
-#     # type: sse # type can optionally be omitted
-#     url: http://localhost:3001/sse
-#     timeout: 60000  # 1 minute timeout for this server, this is the default timeout for MCP servers.
-#   puppeteer:
-#     type: stdio
-#     command: npx
-#     args:
-#       - -y
-#       - "@modelcontextprotocol/server-puppeteer"
-#     timeout: 300000  # 5 minutes timeout for this server
-#   filesystem:
-#     # type: stdio
-#     command: npx
-#     args:
-#       - -y
-#       - "@modelcontextprotocol/server-filesystem"
-#       - /home/user/Lendario/
-#     iconPath: /home/user/Lendario/client/public/assets/logo.svg
-#   mcp-obsidian:
-#     command: npx
-#     args:
-#       - -y
-#       - "mcp-obsidian"
-#       - /path/to/obsidian/vault
-
-# Definition of custom endpoints
+    - swapi.dev
+    - chat.superagentes.ai
+    - google.com
 endpoints:
-  # Este bloco precisa existir. O AppService só monta configuração de endpoint para
-  # as chaves presentes aqui; sem ele o openAI fica sem titleModel, e o título passa
-  # a ser gerado pelo modelo da própria conversa — caro demais para cinco palavras.
   openAI:
     titleConvo: true
-    titleModel: 'gpt-4o-mini'
-    titleMethod: 'completion'
-    titlePrompt: "Forneça um título conciso em português brasileiro, com no máximo 5 palavras, sem pontuação ou aspas. Apenas o título.\n\nConversa:\n{convo}"
+    titleModel: gpt-4o-mini
+    titleMethod: completion
+    titlePrompt: >-
+      Forneça um título conciso em português brasileiro, com no máximo 5 palavras, sem pontuação ou aspas. Apenas o
+      título.
 
-  # assistants:
-  #   disableBuilder: false # Disable Assistants Builder Interface by setting to `true`
-  #   pollIntervalMs: 3000  # Polling interval for checking assistant updates
-  #   timeoutMs: 180000  # Timeout for assistant operations
-  #   # Should only be one or the other, either `supportedIds` or `excludedIds`
-  #   supportedIds: ["asst_supportedAssistantId1", "asst_supportedAssistantId2"]
-  #   # excludedIds: ["asst_excludedAssistantId"]
-  #   # Only show assistants that the user created or that were created externally (e.g. in Assistants playground).
-  #   # privateAssistants: false # Does not work with `supportedIds` or `excludedIds`
-  #   # (optional) Models that support retrieval, will default to latest known OpenAI models that support the feature
-  #   retrievalModels: ["gpt-4-turbo-preview"]
-  #   # (optional) Assistant Capabilities available to all users. Omit the ones you wish to exclude. Defaults to list below.
-  #   capabilities: ["code_interpreter", "retrieval", "actions", "tools", "image_vision"]
-  # agents:
-  #   # (optional) Default recursion depth for agents, defaults to 25
-  # recursionLimit: 5
-  #   # (optional) Max recursion depth for agents, defaults to 25
-  #   maxRecursionLimit: 100
-  #   # (optional) Disable the builder interface for agents
-  #   disableBuilder: false
-  #   # (optional) Agent Capabilities available to all users. Omit the ones you wish to exclude. Defaults to list below.
-  #   capabilities: ["execute_code", "file_search", "actions", "tools"]
+
+      Conversa:
+
+      {convo}
   custom:
-    # xAI Example
-    - name: 'xAI'
-      apiKey: '${XAI_API_KEY}'
-      baseURL: 'https://api.x.ai/v1'
-      models:
-        # 'grok-4-fast-reasoning-latest' mantido: 918 conversas em produção
-        # ainda gravam esse nome e precisam continuar validando. 'grok-4.3' é
-        # o nome real que a xAI resolve por baixo do alias (confirmado via API).
-        default:
-          ['grok-3', 'grok-4', 'grok-4-0709', 'grok-4-latest', 'grok-4-fast-reasoning-latest', 'grok-4.3']
-        fetch: false # Recomendado para buscar modelos automaticamente
-      titleConvo: true
-      titleModel: 'grok-3'
-      summarize: true
-      summaryModel: 'grok-3'
-      forcePrompt: false
-      modelDisplayLabel: 'xAI'
-      # Pode ser necessário dropar alguns parâmetros dependendo da API
-      # dropParams: ["stop", "user"]
-
-    - name: 'deepSeek'
-      apiKey: '${DEEPSEEK_API_KEY}'
-      baseURL: 'https://api.deepseek.com/v1'
-      models:
-        # Esta lista é o FALLBACK, não decoração: loadConfigModels.js:105 usa
-        # `!modelData?.length ? endpoint.models.default : modelData`, e fetchModels
-        # tem timeout de 5s e devolve [] em qualquer erro. Se a DeepSeek demorar,
-        # é esta lista que passa a validar as requisições — então ela precisa
-        # conter o que o MODEL_CATEGORIES envia (`deepseek-flash`), senão o
-        # endpoint inteiro cai com illegal_model_request.
-        # `deepseek-v4-flash` foi aposentado pela DeepSeek e saiu do /v1/models.
-        default: ['deepseek-v4-pro', 'deepseek-flash']
-        fetch: true
-      titleConvo: true
-      # deepseek-chat = alias non-thinking; deepseek-flash liga thinking por padrão.
-      # Medido em 2026-09-11 contra a API: mesmo pedido de título rendeu 7 completion tokens
-      # em deepseek-chat contra 226 (216 de reasoning) em deepseek-flash.
-      titleModel: 'deepseek-chat'
-      modelDisplayLabel: 'DeepSeek'
-      summarize: true
-      summaryModel: 'deepseek-chat'
-      titleMethod: 'completion'
-      titlePrompt: "Forneça um título conciso em português brasileiro, com no máximo 5 palavras, sem pontuação ou aspas. Apenas o título.\n\nConversa:\n{convo}"
-
-    # Groq Example
-    - name: 'groq'
-      apiKey: '${GROQ_API_KEY}'
-      baseURL: 'https://api.groq.com/openai/v1/'
+    - name: xAI
+      apiKey: ${XAI_API_KEY}
+      baseURL: https://api.x.ai/v1
       models:
         default:
-          [
-            'llama3-70b-8192',
-            'llama3-8b-8192',
-            'llama2-70b-4096',
-            'mixtral-8x7b-32768',
-            'gemma-7b-it',
-          ]
+          - grok-3
+          - grok-4
+          - grok-4-0709
+          - grok-4-latest
+          - grok-4-fast-reasoning-latest
+          - grok-4.3
         fetch: false
       titleConvo: true
-      titleModel: 'mixtral-8x7b-32768'
-      modelDisplayLabel: 'groq'
+      titleModel: grok-3
       summarize: true
-      summaryModel: 'llama3-8b-8192'
-
-    # Mistral AI Example
-    - name: 'Mistral' # Unique name for the endpoint
-      # For `apiKey` and `baseURL`, you can use environment variables that you define.
-      # recommended environment variables:
-      apiKey: '${MISTRAL_API_KEY}'
-      baseURL: 'https://api.mistral.ai/v1'
-
-      # Models configuration
+      summaryModel: grok-3
+      forcePrompt: false
+      modelDisplayLabel: xAI
+    - name: deepSeek
+      apiKey: ${DEEPSEEK_API_KEY}
+      baseURL: https://api.deepseek.com/v1
       models:
-        # List of default models to use. At least one value is required.
-        default: ['mistral-tiny', 'mistral-small', 'mistral-medium']
-        # Fetch option: Set to true to fetch models from API.
-        fetch: true # Defaults to false.
-
-      # Optional configurations
-
-      # Title Conversation setting
-      titleConvo: true # Set to true to enable title conversation
-
-      # Title Method: Choose between "completion" or "functions".
-      # titleMethod: "completion"  # Defaults to "completion" if omitted.
-
-      # Title Model: Specify the model to use for titles.
-      titleModel: 'mistral-tiny' # Defaults to "gpt-3.5-turbo" if omitted.
-
-      # Summarize setting: Set to true to enable summarization.
-      summarize: true
-
-      # Summary Model: Specify the model to use if summarization is enabled.
-      summaryModel: 'mistral-tiny' # Defaults to "gpt-3.5-turbo" if omitted.
-
-      # Force Prompt setting: If true, sends a `prompt` parameter instead of `messages`.
-      # forcePrompt: false
-
-      # The label displayed for the AI model in messages.
-      modelDisplayLabel: 'Mistral' # Default is "AI" when not set.
-
-      # Add additional parameters to the request. Default params will be overwritten.
-      # addParams:
-      # safe_prompt: true # This field is specific to Mistral AI: https://docs.mistral.ai/api/
-
-      # Drop Default params parameters from the request. See default params in guide linked below.
-      # NOTE: For Mistral, it is necessary to drop the following parameters or you will encounter a 422 Error:
-      dropParams: ['stop', 'user', 'frequency_penalty', 'presence_penalty']
-
-    # OpenRouter Example
-    - name: 'OpenRouter'
-      # For `apiKey` and `baseURL`, you can use environment variables that you define.
-      # recommended environment variables:
-      apiKey: '${OPENROUTER_KEY}'
-      baseURL: 'https://openrouter.ai/api/v1'
-      models:
-        default: ['anthropic/claude-sonnet-4.5']
+        default:
+          - deepseek-v4-pro
+          - deepseek-flash
         fetch: true
       titleConvo: true
-      titleModel: 'anthropic/claude-sonnet-4.5'
-      # Recommended: Drop the stop parameter from the request as Openrouter models use a variety of stop tokens.
-      dropParams: ['stop']
-      # Use Anthropic branding and name in UI when using OpenRouter
-      modelDisplayLabel: 'Claude'
+      titleModel: deepseek-chat
+      modelDisplayLabel: DeepSeek
+      summarize: true
+      summaryModel: deepseek-chat
+      titleMethod: completion
+      titlePrompt: >-
+        Forneça um título conciso em português brasileiro, com no máximo 5 palavras, sem pontuação ou aspas. Apenas o
+        título.
+
+
+        Conversa:
+
+        {convo}
+    - name: groq
+      apiKey: ${GROQ_API_KEY}
+      baseURL: https://api.groq.com/openai/v1/
+      models:
+        default:
+          - llama3-70b-8192
+          - llama3-8b-8192
+          - llama2-70b-4096
+          - mixtral-8x7b-32768
+          - gemma-7b-it
+        fetch: false
+      titleConvo: true
+      titleModel: mixtral-8x7b-32768
+      modelDisplayLabel: groq
+      summarize: true
+      summaryModel: llama3-8b-8192
+    - name: Mistral
+      apiKey: ${MISTRAL_API_KEY}
+      baseURL: https://api.mistral.ai/v1
+      models:
+        default:
+          - mistral-tiny
+          - mistral-small
+          - mistral-medium
+        fetch: true
+      titleConvo: true
+      titleModel: mistral-tiny
+      summarize: true
+      summaryModel: mistral-tiny
+      modelDisplayLabel: Mistral
+      dropParams:
+        - stop
+        - user
+        - frequency_penalty
+        - presence_penalty
+    - name: OpenRouter
+      apiKey: ${OPENROUTER_KEY}
+      baseURL: https://openrouter.ai/api/v1
+      models:
+        default:
+          - anthropic/claude-sonnet-4.5
+          - openai/gpt-5-mini
+          - anthropic/claude-haiku-4.5
+          - deepseek/deepseek-v4-flash
+        fetch: true
+      titleConvo: true
+      titleModel: openai/gpt-4o-mini
+      dropParams:
+        - stop
+      modelDisplayLabel: AI
       iconURL: anthropic
       summarize: true
-      summaryModel: 'current_model'
-
-    # Portkey AI Example
-    - name: 'Portkey'
-      apiKey: 'dummy'
-      baseURL: 'https://api.portkey.ai/v1'
+      summaryModel: current_model
+    - name: Portkey
+      apiKey: dummy
+      baseURL: https://api.portkey.ai/v1
       headers:
-        x-portkey-api-key: '${PORTKEY_API_KEY}'
-        x-portkey-virtual-key: '${PORTKEY_OPENAI_VIRTUAL_KEY}'
+        x-portkey-api-key: ${PORTKEY_API_KEY}
+        x-portkey-virtual-key: ${PORTKEY_OPENAI_VIRTUAL_KEY}
       models:
-        default: ['gpt-4o-mini', 'gpt-4o', 'chatgpt-4o-latest']
+        default:
+          - gpt-4o-mini
+          - gpt-4o
+          - chatgpt-4o-latest
         fetch: true
       titleConvo: true
-      titleModel: 'current_model'
+      titleModel: current_model
       summarize: true
-      summaryModel: 'current_model'
+      summaryModel: current_model
       forcePrompt: false
-      modelDisplayLabel: 'Portkey'
+      modelDisplayLabel: Portkey
       iconURL: https://images.crunchbase.com/image/upload/c_pad,f_auto,q_auto:eco,dpr_1/rjqy7ghvjoiu4cd1xjbf
+  all:
+    titleConvo: true
+    titleEndpoint: openAI
+    titleModel: gpt-4o-mini
+    titleMethod: completion
+    titlePrompt: >-
+      Forneça um título conciso em português brasileiro, com no máximo 5 palavras, sem pontuação ou aspas. Apenas o
+      título.
 
+      Conversa: {convo}
 fileConfig:
   endpoints:
-    #     assistants:
-    #       fileLimit: 5
-    #       fileSizeLimit: 10  # Maximum size for an individual file in MB
-    #       totalSizeLimit: 50  # Maximum total size for all files in a single request in MB
-    #       supportedMimeTypes:
-    #         - "image/.*"
-    #         - "application/pdf"
-    #     openAI:
-    #       disabled: true  # Disables file uploading to the OpenAI endpoint
     default:
       totalSizeLimit: 95
-#     YourCustomEndpointName:
-#       fileLimit: 2
-#       fileSizeLimit: 5
-#   serverFileSizeLimit: 100  # Global server file size limit in MB
-#   avatarSizeLimit: 2  # Limit for user avatar image size in MB
-#   imageGeneration: # Image Gen settings, either percentage or px
-#     percentage: 100
-#     px: 1024
-#   # Client-side image resizing to prevent upload errors
-#   clientImageResize:
-#     enabled: false  # Enable/disable client-side image resizing (default: false)
-#     maxWidth: 1900  # Maximum width for resized images (default: 1900)
-#     maxHeight: 1900  # Maximum height for resized images (default: 1900)
-#     quality: 0.92  # JPEG quality for compression (0.0-1.0, default: 0.92)
-# # See the Custom Configuration Guide for more information on Assistants Config:
-# # https://www.chat.superagentes.ai/docs/configuration/librechat_yaml/object_structure/assistants_endpoint
-
-# Web Search Configuration - Serper + Firecrawl + Cohere
 webSearch:
-  # Primary Search Provider - Serper
-  serperApiKey: '${SERPER_API_KEY}'
-  searchProvider: 'serper'
-
-  # Scraper - Firecrawl (only valid scraper option)
-  firecrawlApiKey: '${FIRECRAWL_API_KEY}'
-  scraperType: 'firecrawl'
-
-  # Reranker - Cohere
-  cohereApiKey: '${COHERE_API_KEY}'
-  rerankerType: 'cohere'
-
-  # General Settings
-  scraperTimeout: 7500 # Standard timeout for real services
+  serperApiKey: ${SERPER_API_KEY}
+  searchProvider: serper
+  firecrawlApiKey: ${FIRECRAWL_API_KEY}
+  scraperType: firecrawl
+  cohereApiKey: ${COHERE_API_KEY}
+  rerankerType: cohere
+  scraperTimeout: 7500
   safeSearch: 1
-
 rateLimits:
   messagesByModel:
     gpt-5:
       userMax: 840
-      userWindowInMinutes: 10080    # 1 semana (7 dias * 24h * 60min)
-    # TEMPORÁRIO: o agente e as conversas migradas já usam gpt-5.1, mas o código
-    # em produção ainda não mapeia esse nome para o id 'gpt-5'. Sem esta entrada
-    # o limitador cai em "no limit configured" e libera geral.
-    # Remover depois que o PR #173 estiver deployado nos quatro serviços.
-    'gpt-5.1':
+      userWindowInMinutes: 10080
+    gpt-5.1:
       userMax: 840
       userWindowInMinutes: 10080
     claude-sonnet-4:
       userMax: 630
-      userWindowInMinutes: 10080    # 1 semana (7 dias * 24h * 60min)
-  # Teto de tokens de entrada por conversa — este é o que o middleware bloqueia.
+      userWindowInMinutes: 10080
   inputTokensByConversation:
     userMax: 150000
-    models: ['claude-sonnet-4', 'gpt-5', 'gpt-5.1']
-  # Mesmo teto, mas só para o frontend desenhar o indicador de consumo.
+    models:
+      - claude-sonnet-4
+      - gpt-5
+      - gpt-5.1
   conversationTokens:
     userMax: 150000
-    models: ['gpt-5', 'gpt-5.1', 'claude-sonnet-4']
-# Memory configuration for user memories
-# memory:
-#   # (optional) Disable memory functionality
-#   disabled: false
-#   # (optional) Restrict memory keys to specific values to limit memory storage and improve consistency
-#   validKeys: ["preferences", "work_info", "personal_info", "skills", "interests", "context"]
-#   # (optional) Maximum token limit for memory storage (not yet implemented for token counting)
-#   tokenLimit: 10000
-#   # (optional) Enable personalization features (defaults to true if memory is configured)
-#   # When false, users will not see the Personalization tab in settings
-#   personalize: true
-#   # Memory agent configuration - either use an existing agent by ID or define inline
-#   agent:
-#     # Option 1: Use existing agent by ID
-#     # id: "your-memory-agent-id"
-#     # Option 2: Define agent inline
-#     provider: "openai"
-#     model: "gpt-4o-mini"
-#     instructions: "You are a memory management assistant. Store and manage user information accurately."
-#     model_parameters:
-#       temperature: 0.1
+    models:
+      - gpt-5
+      - gpt-5.1
+      - claude-sonnet-4
