@@ -216,8 +216,11 @@ endpoints:
       apiKey: '${XAI_API_KEY}'
       baseURL: 'https://api.x.ai/v1'
       models:
+        # 'grok-4-fast-reasoning-latest' mantido: 918 conversas em produção
+        # ainda gravam esse nome e precisam continuar validando. 'grok-4.3' é
+        # o nome real que a xAI resolve por baixo do alias (confirmado via API).
         default:
-          ['grok-3', 'grok-4', 'grok-4-0709', 'grok-4-latest', 'grok-4-fast-reasoning-latest']
+          ['grok-3', 'grok-4', 'grok-4-0709', 'grok-4-latest', 'grok-4-fast-reasoning-latest', 'grok-4.3']
         fetch: false # Recomendado para buscar modelos automaticamente
       titleConvo: true
       titleModel: 'grok-3'
@@ -242,6 +245,9 @@ endpoints:
         default: ['deepseek-v4-pro', 'deepseek-flash']
         fetch: true
       titleConvo: true
+      # deepseek-chat = alias non-thinking; deepseek-flash liga thinking por padrão.
+      # Medido em 2026-09-11 contra a API: mesmo pedido de título rendeu 7 completion tokens
+      # em deepseek-chat contra 226 (216 de reasoning) em deepseek-flash.
       titleModel: 'deepseek-chat'
       modelDisplayLabel: 'DeepSeek'
       summarize: true
@@ -400,28 +406,28 @@ webSearch:
   safeSearch: 1
 
 rateLimits:
-    messagesByModel:
-      gpt-5:
-        userMax: 840
-        userWindowInMinutes: 10080
-      # TEMPORÁRIO: o agente e as conversas migradas já usam gpt-5.1, mas o código
-      # em produção ainda não mapeia esse nome para o id 'gpt-5'. Sem esta entrada
-      # o limitador cai em "no limit configured" e libera geral.
-      # Remover depois que o PR #173 estiver deployado.
-      'gpt-5.1':
-        userMax: 840
-        userWindowInMinutes: 10080
-      claude-sonnet-4:
-        userMax: 630
-        userWindowInMinutes: 10080
-    # ADICIONAR - para o middleware bloquear por tokens:
-    inputTokensByConversation:
-      userMax: 150000
-      models: ['claude-sonnet-4', 'gpt-5', 'gpt-5.1']
-    # Manter - para o frontend mostrar o indicador:
-    conversationTokens:
-      userMax: 150000
-      models: ['gpt-5', 'gpt-5.1', 'claude-sonnet-4']
+  messagesByModel:
+    gpt-5:
+      userMax: 840
+      userWindowInMinutes: 10080    # 1 semana (7 dias * 24h * 60min)
+    # TEMPORÁRIO: o agente e as conversas migradas já usam gpt-5.1, mas o código
+    # em produção ainda não mapeia esse nome para o id 'gpt-5'. Sem esta entrada
+    # o limitador cai em "no limit configured" e libera geral.
+    # Remover depois que o PR #173 estiver deployado nos quatro serviços.
+    'gpt-5.1':
+      userMax: 840
+      userWindowInMinutes: 10080
+    claude-sonnet-4:
+      userMax: 630
+      userWindowInMinutes: 10080    # 1 semana (7 dias * 24h * 60min)
+  # Teto de tokens de entrada por conversa — este é o que o middleware bloqueia.
+  inputTokensByConversation:
+    userMax: 150000
+    models: ['claude-sonnet-4', 'gpt-5', 'gpt-5.1']
+  # Mesmo teto, mas só para o frontend desenhar o indicador de consumo.
+  conversationTokens:
+    userMax: 150000
+    models: ['gpt-5', 'gpt-5.1', 'claude-sonnet-4']
 # Memory configuration for user memories
 # memory:
 #   # (optional) Disable memory functionality
